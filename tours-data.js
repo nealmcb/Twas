@@ -271,14 +271,15 @@ const audioToursData = [
     }
 ];
 
-// Note: This is a template structure. The actual data should be extracted from
-// https://www.wildanimalsanctuary.org/audio-tours which contains links to
-// approximately 19 collections of audio files and transcripts.
+// Note: This is a template structure with 17 sample collections.
+// The actual data should be extracted from https://www.wildanimalsanctuary.org/audio-tours
+// which contains links to approximately 19 collections of audio files and transcripts.
 // 
 // To populate this with real data:
 // 1. Visit the URL and identify all collection links
 // 2. For each collection, extract the individual tour information
 // 3. Replace the placeholder data above with actual URLs and descriptions
+// 4. Add any additional collections to reach the full ~19 collections
 
 // Export for Node.js testing
 if (typeof module !== 'undefined' && module.exports) {

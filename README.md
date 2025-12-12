@@ -4,7 +4,7 @@ A consolidated web interface for browsing all audio tours and transcripts from t
 
 ## Overview
 
-This project provides a single, unified web page that indexes all audio tours from the Wild Animal Sanctuary (https://www.wildanimalsanctuary.org/audio-tours). Instead of navigating through multiple collection pages, visitors can:
+This project provides a single, unified web page that indexes audio tours from the Wild Animal Sanctuary (https://www.wildanimalsanctuary.org/audio-tours). The website has approximately 19 collections; this implementation currently includes 17 sample collections as a demonstration. Instead of navigating through multiple collection pages, visitors can:
 
 - Browse all audio tours in one place
 - Search tours by name, animal type, or description
@@ -14,7 +14,7 @@ This project provides a single, unified web page that indexes all audio tours fr
 ## Features
 
 ### Current Features
-- **Unified Index**: All audio tours from approximately 19 collections displayed in a single page
+- **Unified Index**: Audio tours from multiple collections displayed in a single page (17 sample collections currently included, expandable to the full ~19 collections from the website)
 - **Search Functionality**: Real-time search across tour titles, descriptions, and collection names
 - **Sorting Options**: Sort tours alphabetically in ascending or descending order
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices

@@ -166,12 +166,13 @@ function debounce(func, wait) {
 }
 
 // Future enhancement: Add geolocation-based features
-// This function will be used when location data is available
-function initializeMap() {
-    // Placeholder for future map integration
-    // Will display tours on an interactive map based on user's location
-    console.log('Map feature will be implemented in future version');
-}
+// This function is prepared for future map integration when location data becomes available
+// It will be called from init() once the location field in tours-data.js is populated
+// function initializeMap() {
+//     // Will display tours on an interactive map based on user's location
+//     // Example: Create Leaflet/MapBox map, add markers for each tour with location data
+//     console.log('Map feature will be implemented in future version');
+// }
 
 // Export for potential future use
 if (typeof module !== 'undefined' && module.exports) {
