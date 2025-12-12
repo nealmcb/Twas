@@ -134,6 +134,140 @@ const audioToursData = [
                 location: null
             }
         ]
+    },
+    
+    {
+        collectionName: "Mountain Lion Area",
+        tours: [
+            {
+                id: 11,
+                title: "Mountain Lion Habitat",
+                description: "Discover the natural habitat of mountain lions",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/mountain-lions.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/mountain-lions.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Bobcat Refuge",
+        tours: [
+            {
+                id: 12,
+                title: "Bobcat Stories",
+                description: "Meet our rescued bobcats and their journey",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/bobcats.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bobcats.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Fox Den",
+        tours: [
+            {
+                id: 13,
+                title: "Red and Arctic Foxes",
+                description: "Learn about our fox residents",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/foxes.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/foxes.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Serval and Caracal",
+        tours: [
+            {
+                id: 14,
+                title: "African Wildcats",
+                description: "Explore the world of servals and caracals",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/wildcats.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/wildcats.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Leopard Territory",
+        tours: [
+            {
+                id: 15,
+                title: "Leopard Conservation",
+                description: "The story of our leopard rescues",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/leopards.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/leopards.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Jaguar Habitat",
+        tours: [
+            {
+                id: 16,
+                title: "Jaguar Recovery",
+                description: "Understanding jaguar rehabilitation",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/jaguars.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/jaguars.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Cougar Sanctuary",
+        tours: [
+            {
+                id: 17,
+                title: "Cougar Family",
+                description: "Meet the cougar pride at the sanctuary",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/cougars.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/cougars.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Hybrid Cats",
+        tours: [
+            {
+                id: 18,
+                title: "Liger and Tigon Stories",
+                description: "Understanding hybrid big cats",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/hybrids.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/hybrids.txt",
+                location: null
+            }
+        ]
+    },
+    
+    {
+        collectionName: "Visitor Center Experience",
+        tours: [
+            {
+                id: 19,
+                title: "Welcome and Orientation",
+                description: "Start your journey at the visitor center",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/visitor-center.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/visitor-center.txt",
+                location: null
+            },
+            {
+                id: 20,
+                title: "Gift Shop and Donations",
+                description: "Supporting the sanctuary through donations",
+                audioUrl: "https://www.wildanimalsanctuary.org/audio/support.mp3",
+                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/support.txt",
+                location: null
+            }
+        ]
     }
 ];
 
