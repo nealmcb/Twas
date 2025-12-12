@@ -1,0 +1,20 @@
+# Test files
+test.js
+
+# Node modules (if any are added in the future)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
