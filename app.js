@@ -80,6 +80,14 @@ function renderKiosks(collections, isCompact) {
 // Handle clicking on a tour title to filter by that title
 function handleTitleClick(title) {
     const searchInput = document.getElementById('searchInput');
+    const compactToggle = document.getElementById('compactToggle');
+
+    // Exit compact mode to show full description
+    if (compactToggle.checked) {
+        compactToggle.checked = false;
+        document.getElementById('toursContainer').classList.remove('compact');
+    }
+
     searchInput.value = title;
     updateDisplay();
     // Scroll to top
