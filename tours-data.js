@@ -1,727 +1,669 @@
 // Audio Tours Data Structure
-// This data provides a comprehensive tour of the Wild Animal Sanctuary
-// Each collection contains multiple individual audio tours with transcripts
-// Total: 19 collections with ~76 individual tours
+// Extracted from The Wild Animal Sanctuary audio kiosk pages
+// Each collection represents one physical audio kiosk along the walkway
+// Total: 19 kiosks with 71 individual tour sections
 
 const audioToursData = [
     {
-        collectionName: "Main Refuge Tour",
-        tours: [
+        "collectionName": "Audio Kiosk #1",
+        "tours": [
             {
-                id: 1,
-                title: "Welcome to the Refuge",
-                description: "Introduction to the Wild Animal Sanctuary and its mission to rescue and provide lifetime homes for captive wild animals",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/refuge-welcome.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/refuge-welcome.txt",
-                location: null
+                "id": 1,
+                "title": "The Sanctuary is Really Big",
+                "description": "Thank you for visiting The Wild Animal Sanctuary. A written transcript of the audio tour can be found by scanning the QR codes on each of the audio boxes. The Wild Animal Sanctuary began rescuing animals in January 1980 and is the oldest and largest sanctuary in the world dedicated to rescuing ca...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "location": null
             },
             {
-                id: 2,
-                title: "History of the Sanctuary",
-                description: "Learn about how the sanctuary was founded in 1980 and has grown to become one of the largest carnivore sanctuaries in the world",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/sanctuary-history.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/sanctuary-history.txt",
-                location: null
+                "id": 2,
+                "title": "Mile Into the Wild Walkway",
+                "description": "The Wild Animal Sanctuary has an absolutely unique way to view its rescued animals. Our number one goal is to give the animals the best home possible, so it is imperative that the presence of people does not disturb them. The solution is our Mile Into the Wild walkway that averages 20 to 40 feet ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "location": null
             },
             {
-                id: 3,
-                title: "The Mile Into The Wild Walkway",
-                description: "Explore our elevated walkway that provides unique overhead views of the habitats below",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/walkway.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/walkway.txt",
-                location: null
+                "id": 3,
+                "title": "Firehouse and Beyond",
+                "description": "As you look to the southeast or about 45\u00b0 to the left, you will see a small white building made of the same white material as the Welcome Center. This building is used to house fire-fighting equipment and other essential supplies for our Animal Care and Operations teams. Directly beyond it are mu...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "location": null
             },
             {
-                id: 4,
-                title: "Natural Habitat Design",
-                description: "Understand how we design large acreage habitats that allow animals to express natural behaviors",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/habitat-design.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/habitat-design.txt",
-                location: null
+                "id": 4,
+                "title": "The Leopard Sky Bridge",
+                "description": "In front of you in the middle of our Leopard habitat is what we call our Leopard sky bridge. Like most cats, including house cats, Leopards enjoy being in a position that is higher than the ground around them. This gives them an obvious sense of safety but also allows them to better see the surro...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk1",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Big Cat Habitats",
-        tours: [
+        "collectionName": "Audio Kiosk #2",
+        "tours": [
             {
-                id: 5,
-                title: "Big Cat Rescue Stories",
-                description: "Meet rescued big cats from circuses, roadside zoos, and the exotic pet trade",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/big-cats.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/big-cats.txt",
-                location: null
+                "id": 5,
+                "title": "Lockouts: Their Use",
+                "description": "In front of you are three smaller enclosures almost identical in appearance with each having a concrete shelter as well as a concrete pipe that leads to an underground den. Such lockouts are essential for every animal the Sanctuary rescues. An animal that has been in a small cage its entire life ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "location": null
             },
             {
-                id: 6,
-                title: "Big Cat Behavior and Social Structure",
-                description: "Learn about natural big cat behaviors and how they interact in sanctuary settings",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/big-cat-behavior.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/big-cat-behavior.txt",
-                location: null
+                "id": 6,
+                "title": "Underground Dens",
+                "description": "Another feature in every habitat that is essential for the safety, well-being, and protection of the animals are the underground or above-ground dens. As you can see, there is a concrete pipe that leads down into the ground. It actually goes back about 20 feet to an underground buried concrete bu...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "location": null
             },
             {
-                id: 7,
-                title: "Conservation and Education",
-                description: "Discover how sanctuaries play a role in conservation and public education about captive wildlife",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/conservation-education.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/conservation-education.txt",
-                location: null
+                "id": 7,
+                "title": "Winter Weather. No Problem",
+                "description": "One of the most common questions we get from guests is how do the animals do in the winter time? This is a natural question since most people associate Lions with the warm savannas of Africa or Tigers with the hot jungles of India. However, keep in mind that none of these animals have ever lived ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "location": null
             },
             {
-                id: 8,
-                title: "Big Cat Feeding and Care",
-                description: "Learn about the daily care, nutrition, and veterinary support provided to our big cats",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/big-cat-care.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/big-cat-care.txt",
-                location: null
+                "id": 8,
+                "title": "Solitary vs. Social Animals",
+                "description": "One of the things that makes The Wild Animal Sanctuary unique is that the vast majority of animals live in social groups consisting of multiple animals. Naturally, the thought of having a pride of Lions or pack of Wolves makes perfect sense, since they live in larger social groups in the wild. Bu...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk2",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Bear Territory",
-        tours: [
+        "collectionName": "Audio Kiosk #3",
+        "tours": [
             {
-                id: 9,
-                title: "Black Bears",
-                description: "Meet our black bear residents rescued from roadside attractions and their rehabilitation journey",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/black-bears.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/black-bears.txt",
-                location: null
+                "id": 9,
+                "title": "Foxes on the Sly",
+                "description": "Directly below you is one of our large Fox habitats. Within this habitat are multiple Foxes that may make you work to find them. Most are Red Foxes with various color variations that were rescued from a now-closed Iowa facility that specialized in the breeding of Foxes for fur and fashion. Each a...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "location": null
             },
             {
-                id: 10,
-                title: "Grizzly Bears",
-                description: "Discover the story of our grizzly bear rescues from entertainment facilities and private ownership",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/grizzly-bears.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/grizzly-bears.txt",
-                location: null
+                "id": 10,
+                "title": "You Gotta Look for the Animals",
+                "description": "Keep in mind throughout your visit today that you will have to work a little bit to see animals. Yes, some may be quite visible and out in the open, but that is not always the case. Our experience has shown that the enjoyment of one\u2019s visit is directly proportional to how much work they put into ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "location": null
             },
             {
-                id: 11,
-                title: "Bear Hibernation and Seasonal Behavior",
-                description: "Understand how bears at the sanctuary experience natural seasonal changes and denning behaviors",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bear-hibernation.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bear-hibernation.txt",
-                location: null
-            },
-            {
-                id: 12,
-                title: "Bear Enrichment Activities",
-                description: "Learn about the enrichment programs that keep bears physically and mentally stimulated",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bear-enrichment.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bear-enrichment.txt",
-                location: null
+                "id": 11,
+                "title": "Lions in the Distance",
+                "description": "Looking farther west behind Manchas, the Jaguar, there is a very large habitat with a pride of African Lions. This pride was rescued in 2023 from Puerto Rico\u2019s only zoo in the city of Mayag\u00fcez. Damage from hurricanes, along with numerous other financial and animal welfare issues, resulted in the ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk3",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Wolf & Coyote Area",
-        tours: [
+        "collectionName": "Audio Kiosk #4",
+        "tours": [
             {
-                id: 13,
-                title: "Wolf Pack",
-                description: "Understanding wolf behavior, pack dynamics, and the importance of family groups",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/wolf-pack.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/wolf-pack.txt",
-                location: null
+                "id": 12,
+                "title": "Strawberry Tiger",
+                "description": "In the habitat directly before you with the large den in the back, is BaBuVa, a female Tiger. BaBuVa, is known as a golden, or tabby, or strawberry-colored Tiger due to lighter coloration. She and sixteen other Lions, Tigers and big cat hybrids as well as two Grizzly Bears were rescued by The Wil...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "location": null
             },
             {
-                id: 14,
-                title: "Coyote Families",
-                description: "Discover the adaptable coyote and the challenges they face from the exotic pet trade",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/coyotes.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/coyotes.txt",
-                location: null
+                "id": 13,
+                "title": "The Four Ring Habitats",
+                "description": "On your right are four ring habitats for some smaller animals. They were either recently rescued or are retiring from the excitement of a large habitat as they became older and required special accommodations. In the second ring live Bobcats - one coming from a private-owner situation and another...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "location": null
             },
             {
-                id: 15,
-                title: "Wolf Communication",
-                description: "Learn about howling, body language, and other forms of wolf communication",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/wolf-communication.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/wolf-communication.txt",
-                location: null
+                "id": 14,
+                "title": "The Tigers in the Distance",
+                "description": "Directly to the east or behind the last ring lives two Tigers. ShereKhan and his sister, KiKi, came to The Wild Animal Sanctuary from a facility where they were used for paid photo opportunities for the first few months of their lives. As a \u201cphoto cub\u201d, they were subjected to a life of total expl...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "location": null
             },
             {
-                id: 16,
-                title: "Wolf-Dog Hybrids",
-                description: "Understanding the challenges of wolf-dog hybrids and why they don't make good pets",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/wolf-hybrids.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/wolf-hybrids.txt",
-                location: null
+                "id": 15,
+                "title": "Texas Tiger",
+                "description": "Behind you, in the triangular habitat along the service road is a beautiful Tiger with a remarkable story named, \u201cNahla\u201d. She was kept as a pet in Texas and managed to escape due to a rainstorm that flooded the building she resided. Nahla was found wondering the streets and the young Tiger was so...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk4",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Tiger Habitat",
-        tours: [
+        "collectionName": "Audio Kiosk #5",
+        "tours": [
             {
-                id: 17,
-                title: "Bengal Tigers",
-                description: "Stories of rescued Bengal tigers from private owners and entertainment facilities",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bengal-tigers.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bengal-tigers.txt",
-                location: null
+                "id": 16,
+                "title": "Foxes Below",
+                "description": "Directly below you, is another Fox habitat. These delightful animals are typically quite visible. However, if you are not seeing them, be sure to look around tree bases, logs, or - like their tiger neighbors to the east - curled up in the grass. A couple of them are cream colored, so they may not...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "location": null
             },
             {
-                id: 18,
-                title: "Siberian Tigers",
-                description: "Meet our Siberian tigers and learn about their unique adaptations to cold climates",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/siberian-tigers.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/siberian-tigers.txt",
-                location: null
+                "id": 17,
+                "title": "Swimming with Tiger Cubs",
+                "description": "In the large habitat directly in front of you, or to the east, are two Tigers. Pearl, the white female, and Brutus, the orange-colored male can sometimes be tricky to find when they lay down in the grass. A head may pop up you didn\u2019t know was there! These Tigers spent time at Joe Exotic\u2019s Greater...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "location": null
             },
             {
-                id: 19,
-                title: "Tiger Conservation Crisis",
-                description: "Learn about the crisis facing wild tigers and the captive tiger problem in America",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/tiger-crisis.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/tiger-crisis.txt",
-                location: null
-            },
-            {
-                id: 20,
-                title: "Tiger Play and Interaction",
-                description: "Observe natural tiger behaviors including play, swimming, and territorial displays",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/tiger-behavior.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/tiger-behavior.txt",
-                location: null
+                "id": 18,
+                "title": "Black Bears",
+                "description": "In the long narrow habitat behind the Coyotes you will find a number of Black Bears. In each case they come from very horrible situations. Most of the Bears were rescued from South Carolina where they were used for the ancient blood sport of Bear-baiting. South Carolina was the last state in the ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk5",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Lion Pride",
-        tours: [
+        "collectionName": "Audio Kiosk #6",
+        "tours": [
             {
-                id: 21,
-                title: "African Lions",
-                description: "The journey of our African lion pride rescued from circuses and private facilities",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/african-lions.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/african-lions.txt",
-                location: null
+                "id": 19,
+                "title": "Syrian Brown Bears",
+                "description": "In the habitat you are approaching are five Syrian Brown Bears. The habitat is on both sides of the walkway. These five Bears were rescued from a roadside zoo in Wisconsin that lost its license to possess and exhibit such animals. These Bears were only about 2 \u00bd years old when they arrived, but t...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "location": null
             },
             {
-                id: 22,
-                title: "Lion Pride Structure",
-                description: "Understand the complex social structure of lion prides and family bonds",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/lion-pride.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/lion-pride.txt",
-                location: null
+                "id": 20,
+                "title": "Grizzly Habitat",
+                "description": "There\u2019s a very large habitat behind you and to the right, or to the northwest, in which live Grizzly Bears. You will see many above & below ground dens as well as a large pond the Bears can use for swimming and cooling off in the summer months. Two of the Bears, along with 17 big cats, came from ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "location": null
             },
             {
-                id: 23,
-                title: "Circus Lion Rescues",
-                description: "Heartbreaking and uplifting stories of lions rescued from traveling circuses",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/circus-lions.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/circus-lions.txt",
-                location: null
+                "id": 21,
+                "title": "TIGER KING Tigers",
+                "description": "Now looking way to the east you will see many different habitats, den structures, and other features. In this area live the majority of the 39 Tigers rescued from Joe Exotic\u2019s Greater Wynnewood Exotic Animal Park that was featured in the Netflix docuseries \u201cTiger King\u201d. In late 2017 the Sanctuary...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "location": null
             },
             {
-                id: 24,
-                title: "Lion Health and Veterinary Care",
-                description: "Learn about the specialized veterinary care provided to our aging lion residents",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/lion-care.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/lion-care.txt",
-                location: null
+                "id": 22,
+                "title": "Ostriches and Emus",
+                "description": "Just ahead and to the right you will see a ramp that goes down to some small buildings. The last building is where restrooms are located. Off in the distance behind the restrooms is a habitat that runs along County Road 53. In that habitat are a number of Emu and Ostriches. Even though such anima...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk6",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Mountain Lion Area",
-        tours: [
+        "collectionName": "Audio Kiosk #7",
+        "tours": [
             {
-                id: 25,
-                title: "Mountain Lion Habitat",
-                description: "Discover the natural habitat of mountain lions and their solitary nature",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/mountain-lions.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/mountain-lions.txt",
-                location: null
+                "id": 23,
+                "title": "Bolivian Lion Story",
+                "description": "You are now standing in the Bolivia Lion House. The structure was built in late 2010 in anticipation of the Sanctuary rescuing 25 African Lions from the South American country. In 2009 Bolivia passed a national law prohibiting the use of animals in circuses. As a result, hundreds of animals neede...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "location": null
             },
             {
-                id: 26,
-                title: "Mountain Lion Hunting Behavior",
-                description: "Learn about the hunting strategies and prey preferences of these apex predators",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/mountain-lion-hunting.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/mountain-lion-hunting.txt",
-                location: null
+                "id": 24,
+                "title": "Land of the Lions",
+                "description": "This area in and around the Bolivia Lion House could easily be called the Land of the Lions. That\u2019s because there are a large number of Lions prides living in close proximity to one another. This, of course, is very beneficial to Lions since they are such social and territorial creatures and deri...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "location": null
             },
             {
-                id: 27,
-                title: "Mountain Lions as Pets",
-                description: "Why mountain lions don't make good pets and the dangers of private ownership",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/mountain-lion-pets.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/mountain-lion-pets.txt",
-                location: null
+                "id": 25,
+                "title": "Incubator for New Lion Rescues",
+                "description": "As the original Lions from Bolivia got moved into habitats, space was freed-up in the Lion House which could then be used for newly-arriving Lions. It can almost be considered an incubator for new Lions. This protected environment allows Lions to get used to their new home as well as be introduce...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "location": null
             },
             {
-                id: 28,
-                title: "Mountain Lion Territory",
-                description: "Understanding territorial behavior and space requirements for these wide-ranging cats",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/mountain-lion-territory.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/mountain-lion-territory.txt",
-                location: null
+                "id": 26,
+                "title": "Geriatric Lions",
+                "description": "Just like with arriving new Lions, the Lion House also provides a great place for geriatric or assisted living Lions. Sometimes, as an animal ages, it is no longer able to thrive in a large habitat due to the distances that need to be covered for feeding, watering and finding shelter. Often this ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk7",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Leopard Territory",
-        tours: [
+        "collectionName": "Audio Kiosk #8",
+        "tours": [
             {
-                id: 29,
-                title: "Leopard Conservation",
-                description: "The story of our leopard rescues and their role in education about captive breeding",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/leopards.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/leopards.txt",
-                location: null
+                "id": 27,
+                "title": "Lynx and Servals",
+                "description": "You\u2019re now approaching the area under the walkway where some of the Sanctuary\u2019s Lynx, Bobcats, and Servals reside. Directly below you is an enclosure for a \u201cTiger King\u201d- rescued Bobcat & Lynx followed by a shared area in which there are two tall climbing towers. On the opposite end of this habita...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "location": null
             },
             {
-                id: 30,
-                title: "African Leopards",
-                description: "Meet our African leopards and learn about their natural behavior and adaptations",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/african-leopards.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/african-leopards.txt",
-                location: null
+                "id": 28,
+                "title": "The Twin Towers",
+                "description": "The larger area ahead with the two tall towers on either side of the walkway is a shared space for the Lynx and Servals. Be sure to look closely below you as you walk across this area looking in the pipes and under the trees for cats. There is almost always one group of cats or the other in this ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "location": null
             },
             {
-                id: 31,
-                title: "Snow Leopards",
-                description: "Discover our snow leopards rescued from private collections and their mountain adaptations",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/snow-leopards.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/snow-leopards.txt",
-                location: null
+                "id": 29,
+                "title": "Bald Eagles",
+                "description": "Over the years a growing population of migratory Bald Eagles has made the Sanctuary its winter home. Between late November and late February there can be upwards of 40 Bald Eagles on the Sanctuary property on any given day. The Eagles most likely split their time between here and Barr Lake locate...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "location": null
             },
             {
-                id: 32,
-                title: "Leopard Climbing and Tree Use",
-                description: "Learn about leopards' incredible climbing abilities and arboreal lifestyle",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/leopard-climbing.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/leopard-climbing.txt",
-                location: null
+                "id": 30,
+                "title": "Two Lion Prides",
+                "description": "On either side of the walkway are two Lion prides. To the right or west is one of the original prides from Bolivia. These lions were the youngest of the whopping 25 lions rescued from various circuses after laws changed in the animals\u2019 favor in 2010. If the Lions are not readily visible, keep in ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk8",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Jaguar Habitat",
-        tours: [
+        "collectionName": "Audio Kiosk #9",
+        "tours": [
             {
-                id: 33,
-                title: "Jaguar Recovery",
-                description: "Understanding jaguar rehabilitation and the challenges of reintroducing captive-bred jaguars",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/jaguars.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/jaguars.txt",
-                location: null
+                "id": 31,
+                "title": "Above The Animals",
+                "description": "Hopefully by now you have noticed that the animals barely acknowledge your presence while up on the walkway. This would not be the case if you were at ground level with them. All of us know that wild animals typically try to remove themselves from the presence of human beings. They primarily do t...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "location": null
             },
             {
-                id: 34,
-                title: "Jaguars and Water",
-                description: "Discover why jaguars love water and their unique swimming abilities among big cats",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/jaguar-swimming.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/jaguar-swimming.txt",
-                location: null
+                "id": 32,
+                "title": "Building the Walkway",
+                "description": "The elevated walkway at the Sanctuary is a marvel. It has been recognized by Guinness World Records as the longest pedestrian footbridge in the world with over 1.5 miles of walkway. Amazingly, Sanctuary staff members have been able to build the entire structure on-site\u2014saving untold thousands of ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "location": null
             },
             {
-                id: 35,
-                title: "Black Jaguars",
-                description: "Learn about melanistic jaguars (black panthers) and the genetics behind their coloring",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/black-jaguars.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/black-jaguars.txt",
-                location: null
+                "id": 33,
+                "title": "The People in Orange You See",
+                "description": "Hopefully on your visit today you have seen a number of people in orange. Those that you see on the walkway are volunteers. The Sanctuary has always relied incredibly on the labor of volunteers to make the Sanctuary a success. Volunteers are used both for educational purposes, like up here on the...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "location": null
             },
             {
-                id: 36,
-                title: "Jaguar Conservation in the Wild",
-                description: "Understanding the threats facing wild jaguars in Central and South America",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/jaguar-conservation.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/jaguar-conservation.txt",
-                location: null
+                "id": 34,
+                "title": "Sanctuary Ecosystems",
+                "description": "In addition to all of the hundreds of animals that have been rescued and call the Sanctuary home, many other naturally-wild animals live here. As one can imagine, with so much land, food, water and protection from human encroachment, many other creatures, large and small, call the Sanctuary home....",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk9",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Cougar Sanctuary",
-        tours: [
+        "collectionName": "Audio Kiosk #10",
+        "tours": [
             {
-                id: 37,
-                title: "Cougar Family",
-                description: "Meet the cougar pride at the sanctuary and their rescue from pet situations",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/cougars.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/cougars.txt",
-                location: null
+                "id": 35,
+                "title": "Grizzly Bears",
+                "description": "In this near habitat with the waterfall feature, are two Grizzly Bears named Tiny and Natasha. They were rescued along with 23 other Bears from the Wild Animal Orphanage in San Antonio, Texas in the fall of 2010. This facility had hundreds of animals, many of which were rescued from laboratory si...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "location": null
             },
             {
-                id: 38,
-                title: "Cougar Kittens",
-                description: "Learn about cougar reproduction and the challenges of raising cubs born in captivity",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/cougar-kittens.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/cougar-kittens.txt",
-                location: null
+                "id": 36,
+                "title": "25 Bears from Texas",
+                "description": "Behind this Grizzly Bear habitat with the waterfall is another Bear habitat. It is one of only two habitats at the Sanctuary that has both Black and Grizzly Bears living together. The majority of Bears in this habitat are Black Bears that came from the Wild Animal Orphanage in San Antonio, Texas ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "location": null
             },
             {
-                id: 39,
-                title: "Cougar Vocalizations",
-                description: "Discover the unique sounds cougars make, from purrs to screams",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/cougar-sounds.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/cougar-sounds.txt",
-                location: null
+                "id": 37,
+                "title": "Down The Ramp",
+                "description": "Ahead and to your left you will see a ramp that descends down towards public restrooms that are located at the end of it. However, feel free to head down this ramp to perhaps get a better view of the Grizzlies in this first habitat, or to view animals in the upcoming Transitional Bear habitat or ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "location": null
             },
             {
-                id: 40,
-                title: "Cougar-Human Conflicts",
-                description: "Understanding why cougars end up in captivity and human-wildlife coexistence",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/cougar-conflicts.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/cougar-conflicts.txt",
-                location: null
+                "id": 38,
+                "title": "Building Lion Prides",
+                "description": "To the right, or to the west you will see a Lion habitat with a large log structure at its center. This group of Lions is a great example of how the Sanctuary is able to build Lion prides consisting of unrelated animals. Some of the Lions were rescued many years ago in Mexico, where citizens atte...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk10",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Bobcat Refuge",
-        tours: [
+        "collectionName": "Audio Kiosk #11",
+        "tours": [
             {
-                id: 41,
-                title: "Bobcat Stories",
-                description: "Meet our rescued bobcats and their journey from pet trade to sanctuary",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bobcats.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bobcats.txt",
-                location: null
+                "id": 39,
+                "title": "Transitional Habitat",
+                "description": "To your left or to the east, is a transitional habitat. This space is utilized as an \u201cintroductory\u201d area for newer rescues with unique situations. Think of this like a \u201ccondo\u201d before the mansion of a large acreage habitat. Over the years, this area has been home to various rescues, and more recen...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "location": null
             },
             {
-                id: 42,
-                title: "Bobcat Adaptability",
-                description: "Learn about the bobcat's remarkable adaptability to various habitats across North America",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bobcat-adaptability.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bobcat-adaptability.txt",
-                location: null
+                "id": 40,
+                "title": "Adoptions and Pledges",
+                "description": "Two of the easiest and most rewarding ways to support the Sanctuary are either adopting an animal or pledging a certain amount of money each month. Adoptions choices include small, medium or large animals. Sponsoring on behalf of a particular animal range from $20 per month for a small animal to ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "location": null
             },
             {
-                id: 43,
-                title: "Bobcat Hunting Techniques",
-                description: "Discover the hunting strategies of these skilled predators",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bobcat-hunting.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bobcat-hunting.txt",
-                location: null
+                "id": 41,
+                "title": "Wolves (East)",
+                "description": "Ahead on the left, you will see wolves from a now-closed rescue center near Los Angeles. Due to a number of setbacks at the facility, the California Department of Fish and Wildlife assumed care of all the facility\u2019s animals. Before that time, they had been rescued from a Minnesota fur farm in Aug...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "location": null
             },
             {
-                id: 44,
-                title: "Bobcats vs Lynx",
-                description: "Understanding the differences between bobcats and their lynx relatives",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/bobcat-lynx.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/bobcat-lynx.txt",
-                location: null
+                "id": 42,
+                "title": "Wolves (West)",
+                "description": "Just ahead and to the right you will see a habitat that currently houses two Arctic Wolves. This brother and sister pair, named Ajack and Sijack, came from a drive-thru Safari Park in Montr\u00e9al, Canada. This facility had many Wolves and a number of them were not getting along. Realizing it could n...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk11",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Fox Den",
-        tours: [
+        "collectionName": "Audio Kiosk #12",
+        "tours": [
             {
-                id: 45,
-                title: "Red Foxes",
-                description: "Learn about our red fox residents and the exotic pet trade",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/red-foxes.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/red-foxes.txt",
-                location: null
+                "id": 43,
+                "title": "Louisiana Wolves",
+                "description": "The habitat behind you is home to the two wolves, Jacob and Zola. The Sanctuary was contacted to rescue Jacob after he was found on the \u201cloose\u201d in a Louisiana neighborhood in 2021. Jacob was later introduced to Zola, a female Wolf rescued along with several other animals from the infamous Tiger K...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "location": null
             },
             {
-                id: 46,
-                title: "Arctic Foxes",
-                description: "Meet our Arctic foxes and learn about their remarkable cold-weather adaptations",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/arctic-foxes.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/arctic-foxes.txt",
-                location: null
+                "id": 44,
+                "title": "Carnivore Nutrition Center",
+                "description": "The tan building just to the east is by far the most important building on the property! Certainly that\u2019s the case if you ask any of the animals. This is the Carnivore Nutrition Center where, in the months when the Bears are awake, 100,000 pounds of food a week or so is processed. When the Bears ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "location": null
             },
             {
-                id: 47,
-                title: "Fox Behavior and Intelligence",
-                description: "Discover the clever and playful nature of foxes and their problem-solving abilities",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/fox-intelligence.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/fox-intelligence.txt",
-                location: null
+                "id": 45,
+                "title": "Veterinary Care",
+                "description": "If you look to the west you will see a modular home in which employees live. The lower level is the Sanctuary\u2019s well-equipped veterinary clinic. The animals that are rescued and live at the Sanctuary enjoy world-class veterinary care that is provided in many different ways. The Sanctuary has a fu...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "location": null
             },
             {
-                id: 48,
-                title: "Fox Domestication Myths",
-                description: "Understanding why foxes don't make good pets despite their dog-like appearance",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/fox-domestication.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/fox-domestication.txt",
-                location: null
+                "id": 46,
+                "title": "Hoof Stock",
+                "description": "As you look towards the veterinary clinic you may see various hoof stock animals like Llamas and even an emu. Yes, the Sanctuary is primarily devoted to rescuing large carnivores, but sometimes other animals just need a home. For example, one of our rescued horses was part of a package deal when ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk12",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Serval and Caracal",
-        tours: [
+        "collectionName": "Audio Kiosk #13",
+        "tours": [
             {
-                id: 49,
-                title: "Servals",
-                description: "Explore the world of servals, their incredible jumping ability, and the dangers of keeping them as pets",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/servals.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/servals.txt",
-                location: null
+                "id": 47,
+                "title": "Black Bears",
+                "description": "On your right is one of many, many Black Bear habitats here at the Sanctuary. The Sanctuary currently has over 200 Bears just at this location with many more down at the Refuge. Here guests can see what a typical Bear habitat consists of. All Bear habitats have many underground and above ground d...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "location": null
             },
             {
-                id: 50,
-                title: "Caracals",
-                description: "Meet our caracals and learn about their distinctive ear tufts and acrobatic hunting style",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/caracals.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/caracals.txt",
-                location: null
+                "id": 48,
+                "title": "Bear Hibernation",
+                "description": "Almost without exception every Bear the Sanctuary has rescued has never had the opportunity to hibernate before arriving here. This is for a number of reasons. Often times they are not allowed to gain enough weight to go into hibernation or they are kept awake for performing or meeting the demand...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "location": null
             },
             {
-                id: 51,
-                title: "African Wildcat Ecology",
-                description: "Understanding the natural habitats and behaviors of African small cats",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/wildcat-ecology.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/wildcat-ecology.txt",
-                location: null
-            },
-            {
-                id: 52,
-                title: "Exotic Cat Pet Trade",
-                description: "The dark side of the exotic cat trade and why these animals suffer as pets",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/exotic-pet-trade.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/exotic-pet-trade.txt",
-                location: null
+                "id": 49,
+                "title": "Tigers and Beyond",
+                "description": "Now looking in the other direction or towards the east, you will see a large Tiger habitat in which six Tigers currently live. All of them were rescued from the facility formerly owned by Joe Exotic as he called himself or the Tiger King as he was called in the Netflix docuseries that was release...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk13",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Hybrid Cats",
-        tours: [
+        "collectionName": "Audio Kiosk #14",
+        "tours": [
             {
-                id: 53,
-                title: "Ligers",
-                description: "Understanding ligers (lion-tiger hybrids) and the ethics of creating hybrid animals",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/ligers.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/ligers.txt",
-                location: null
+                "id": 50,
+                "title": "Camels, Horses and Mules",
+                "description": "To the south you will see a large, 65-acre area of pastureland. You may also see Camels, Horses and Mules. Even though the Sanctuary\u2019s primary mission is to rescue captive born large carnivores, we on occasion rescue other animals that are in dire need of a home or being saved from being euthaniz...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk14",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk14",
+                "location": null
             },
             {
-                id: 54,
-                title: "Tigons",
-                description: "Learn about tigons (tiger-lion hybrids) and the differences from ligers",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/tigons.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/tigons.txt",
-                location: null
-            },
-            {
-                id: 55,
-                title: "Health Issues in Hybrid Cats",
-                description: "Discover the serious health problems that hybrid big cats face",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/hybrid-health.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/hybrid-health.txt",
-                location: null
-            },
-            {
-                id: 56,
-                title: "The Problem with Breeding Hybrids",
-                description: "Why breeding hybrid cats is harmful and contributes to the captive wildlife crisis",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/hybrid-breeding.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/hybrid-breeding.txt",
-                location: null
+                "id": 51,
+                "title": "Kangaroos, and Farm Animals",
+                "description": "Although they may be difficult to see, to the south and a little bit to the west where the second set of buildings is, the Sanctuary has a number of rescued potbelly Pigs, Kangaroos and Wallaroos. All of these animals came from a terrible hoarding situation in Ordway, Colorado in early 2019. At t...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk14",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk14",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Primate Sanctuary",
-        tours: [
+        "collectionName": "Audio Kiosk #15",
+        "tours": [
             {
-                id: 57,
-                title: "Chimpanzees",
-                description: "Meet our chimpanzee family rescued from entertainment and research facilities",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/chimpanzees.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/chimpanzees.txt",
-                location: null
+                "id": 52,
+                "title": "Tiger Pool Area",
+                "description": "This area below you that has running water in the warmer months is incredibly important. Many things take place in this Tiger Pool Area that are essential to the rehabilitation of rescued Tigers. Rescued Tigers that live in the Roundhouse just ahead of you use this area to begin getting used to l...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "location": null
             },
             {
-                id: 58,
-                title: "Chimpanzee Intelligence",
-                description: "Learn about the remarkable cognitive abilities and tool use of chimpanzees",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/chimp-intelligence.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/chimp-intelligence.txt",
-                location: null
+                "id": 53,
+                "title": "Social Compatibility",
+                "description": "The Sanctuary has had great success over the decades being able to form groups of Tigers that live together quite cohesively\u2014perhaps more like roommates than family members, but quite happily all the same. This is accomplished by observing individual Tigers very closely and looking for signs of c...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "location": null
             },
             {
-                id: 59,
-                title: "Primate Social Bonds",
-                description: "Understanding the complex social relationships and emotional lives of primates",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/primate-social.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/primate-social.txt",
-                location: null
+                "id": 54,
+                "title": "Tiger Matchmaking",
+                "description": "The Tiger Roundhouse is where the majority of rescued Tigers begin their stay at The Wild Animal Sanctuary. Like the Lion House, this very controlled environment allows Tigers to be introduced to others while feeling safe and confident at the same time. Typically, two Tigers will be identified by...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "location": null
             },
             {
-                id: 60,
-                title: "Primates in Entertainment",
-                description: "The cruel reality of using primates in movies, TV shows, and advertisements",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/primates-entertainment.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/primates-entertainment.txt",
-                location: null
+                "id": 55,
+                "title": "Generic Tigers",
+                "description": "As incredibly beautiful and majestic as the Sanctuary\u2019s Tigers are, they have no conservation value. That is, Tiger conservation organizations have no desire to use these animals for breeding purposes. The reason is, they are considered to be generic or mutt Tigers. In the decades that Tigers hav...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk15",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Exotic Animals",
-        tours: [
+        "collectionName": "Audio Kiosk #16",
+        "tours": [
             {
-                id: 61,
-                title: "Exotic Animal Diversity",
-                description: "Exploring the variety of rescued exotic animals at the sanctuary",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/exotic-diversity.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/exotic-diversity.txt",
-                location: null
+                "id": 56,
+                "title": "Mountain Lion \u201cApartments\u201d",
+                "description": "Below you are many smaller enclosures with tops on them. These are the primary enclosures for the Sanctuary\u2019s rescued Mountain Lions. The smaller enclosures are each animal\u2019s lair or \u201capartment\u201d, if you will. The Mountain Lions have access to the larger habitat next door which is discussed below....",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "location": null
             },
             {
-                id: 62,
-                title: "Exotic Hoofstock",
-                description: "Meet our rescued exotic hoofed animals from private collections",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/hoofstock.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/hoofstock.txt",
-                location: null
+                "id": 57,
+                "title": "Mountain Lion Habitat",
+                "description": "If you take this short walkway out to the end you will be directly over the Mountain Lion habitat. The cats access this area via an enclosed alleyway system that you can see running along their enclosures. That alleyway leads to a passageway directly under the walkway that enters into the big are...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "location": null
             },
             {
-                id: 63,
-                title: "Exotic Birds",
-                description: "Learn about our exotic bird residents and the illegal bird trade",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/exotic-birds.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/exotic-birds.txt",
-                location: null
+                "id": 58,
+                "title": "Education Center",
+                "description": "The round building at the center of the Tiger Roundhouse is our Education Center. Here you will find a number of videos that explain specific rescues or other aspects of the Sanctuary\u2019s mission and operations. Please take your time and spend some time here to learn more about the Sanctuary and it...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "location": null
             },
             {
-                id: 64,
-                title: "Exotic Reptiles",
-                description: "Discover our rescued reptiles including large constrictors and venomous species",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/exotic-reptiles.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/exotic-reptiles.txt",
-                location: null
+                "id": 59,
+                "title": "Hybrid Lions/Tigers",
+                "description": "If you look to the east, or away from the mountains, back behind the Mountain Lion habitat you will see four other habitats. These habitats are inhabited by a variety of Tigers, Lions and big cat hybrids including Ligers and Ti-ligers. These animals were rescued from a facility called Wildlife in...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk16",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Conservation Efforts",
-        tours: [
+        "collectionName": "Audio Kiosk #17",
+        "tours": [
             {
-                id: 65,
-                title: "Our Mission",
-                description: "Learn about wildlife conservation, rescue operations, and our vision for the future",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/conservation.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/conservation.txt",
-                location: null
+                "id": 60,
+                "title": "This Special-Use Enclosure",
+                "description": "This area with the high fence is one of the original enclosures of the Sanctuary. Currently there is a melanistic or black Leopard living here who has indicated he prefers living on his own, rather than with other Leopards. The Sanctuary always does what is best for the animals, and if he wants t...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "location": null
             },
             {
-                id: 66,
-                title: "Rescue and Transport",
-                description: "The challenging process of rescuing and safely transporting large carnivores",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/rescue-transport.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/rescue-transport.txt",
-                location: null
+                "id": 61,
+                "title": "Remember, Your Tour is Only Half Over",
+                "description": "Keep in mind that your visit to the Sanctuary today is only half-over as you now have the nearly 1 \u00bd-mile walk back to the Welcome Center. Be sure to take time resting or refreshing yourself here in the Snack Bar area if needed. There are wagons and wheelchairs available to rent if you have need ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "location": null
             },
             {
-                id: 67,
-                title: "Legislative Advocacy",
-                description: "How the sanctuary works to change laws protecting captive wildlife",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/advocacy.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/advocacy.txt",
-                location: null
+                "id": 62,
+                "title": "Ways to Help the Animals",
+                "description": "The Sanctuary is only able to exist and fulfill its mission of rescuing animals and educating the public because of support from people like you. There are many ways to help the animals. For a complete list you can visit our website, but some of the more common methods include adopting an animal ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "location": null
             },
             {
-                id: 68,
-                title: "Educational Outreach",
-                description: "Our programs to educate the public about captive wildlife issues",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/education.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/education.txt",
-                location: null
+                "id": 63,
+                "title": "Keep Looking for Animals",
+                "description": "Just like your pets at home move about the house or yard throughout the day, so do the animals here at the Sanctuary. Of course, many animals may still be resting where you saw them before, but feedings take place or other things happen that give them cause to move about. Be sure to keep looking ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk17",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Visitor Center Experience",
-        tours: [
+        "collectionName": "Audio Kiosk #18",
+        "tours": [
             {
-                id: 69,
-                title: "Welcome and Orientation",
-                description: "Start your journey at the visitor center and learn how to make the most of your visit",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/visitor-center.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/visitor-center.txt",
-                location: null
+                "id": 64,
+                "title": "Become a Volunteer",
+                "description": "The Wild Animal Sanctuary has always relied heavily on volunteers to accomplish everything that needs to be done to give the rescued animals a world-class home. The Sanctuary would not be the world\u2019s premier sanctuary for large carnivores if not for the hundreds of dedicated volunteers that have ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "location": null
             },
             {
-                id: 70,
-                title: "Viewing Guidelines",
-                description: "Important guidelines for respectfully observing rescued wildlife",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/viewing-guidelines.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/viewing-guidelines.txt",
-                location: null
+                "id": 65,
+                "title": "Working at the Sanctuary",
+                "description": "In addition to all of the volunteers, the Sanctuary employs many people in the areas of guest services, animal care, operations, maintenance and other administrative and office positions. Although not a prerequisite, many employees are former volunteers. The need for guest service employees incre...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "location": null
             },
             {
-                id: 71,
-                title: "Gift Shop and Donations",
-                description: "Supporting the sanctuary through donations and purchases",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/support.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/support.txt",
-                location: null
+                "id": 66,
+                "title": "Summer Safari Dinners",
+                "description": "Each summer the Sanctuary hosts four Summer Safari Dinners. These are some of the most anticipated and sought after events of the year. In the months of May, June, August and September, a fund-raising dinner is held in the Lion House where guests are entertained by an educational presentation and...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "location": null
             },
             {
-                id: 72,
-                title: "Volunteer and Internship Opportunities",
-                description: "Learn about opportunities to get involved with sanctuary operations and animal care",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/volunteer.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/volunteer.txt",
-                location: null
+                "id": 67,
+                "title": "Run Into the Wild Running Festival",
+                "description": "For many years now the largest event at the Sanctuary each year is the Run Into the Wild Running Festival. On the first Saturday of June each year, thousands of guests attend this special event that takes place near the Welcome Center. The Running Festival includes a 5K and 10K race as well as a ...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk18",
+                "location": null
             }
         ]
     },
-
     {
-        collectionName: "Sanctuary Expansion",
-        tours: [
+        "collectionName": "Audio Kiosk #19",
+        "tours": [
             {
-                id: 73,
-                title: "The Refuge Expansion Project",
-                description: "Learn about ongoing expansion to accommodate more rescued animals",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/expansion.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/expansion.txt",
-                location: null
+                "id": 68,
+                "title": "Thank You for Visiting",
+                "description": "Again, thank you for your visit today; we hope you enjoyed yourself! Please let us know if there is anything that we could have done to make your visit more enjoyable. We hope that you now have a greater appreciation for the problem of captive wildlife and what organizations like the Sanctuary ar...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "location": null
             },
             {
-                id: 74,
-                title: "New Habitat Construction",
-                description: "Behind the scenes look at how new large-acreage habitats are built",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/construction.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/construction.txt",
-                location: null
+                "id": 69,
+                "title": "We Can\u2019t Do It Without You",
+                "description": "As a 501(c)3 nonprofit organization, the Sanctuary relies exclusively on donations from supporters like you to exist, and fulfill its mission of rescuing voiceless animals in need. The Sanctuary simply wouldn\u2019t exist without the support of generous donors. Please know how much your visit today me...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "location": null
             },
             {
-                id: 75,
-                title: "Future Plans",
-                description: "The sanctuary's vision for expansion and increased rescue capacity",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/future-plans.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/future-plans.txt",
-                location: null
+                "id": 70,
+                "title": "Adopting and Pledging",
+                "description": "Two of the easiest and most rewarding ways to support the Sanctuary are by either adopting an animal or pledging a certain amount of money each month. Adoptions are for small, medium or large animals. Adoptions on behalf of a particular animal range from $10 per month for a small animal to $20 pe...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "location": null
             },
             {
-                id: 76,
-                title: "Sustainable Sanctuary Operations",
-                description: "How the sanctuary operates sustainably to minimize environmental impact",
-                audioUrl: "https://www.wildanimalsanctuary.org/audio/sustainability.mp3",
-                transcriptUrl: "https://www.wildanimalsanctuary.org/transcripts/sustainability.txt",
-                location: null
+                "id": 71,
+                "title": "Circle of Life Society",
+                "description": "Supporters of the Sanctuary can become members of the Circle of Life Society by including the Sanctuary in their estate planning. This can be in the form of naming the Sanctuary as a beneficiary of an insurance policy or by simply including the Sanctuary in one\u2019s will. If you would like more info...",
+                "audioUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "transcriptUrl": "https://www.wildanimalsanctuary.org/audiokiosk19",
+                "location": null
             }
         ]
     }
