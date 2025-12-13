@@ -73,11 +73,11 @@ function filterCollections(collections, query) {
                        collection.collectionName.toLowerCase().includes(lowerQuery);
             });
 
-            if (matchingTours.length > 0 ||
-                collection.collectionName.toLowerCase().includes(lowerQuery)) {
+            // Only include collections that have at least one matching tour
+            if (matchingTours.length > 0) {
                 return {
                     ...collection,
-                    tours: matchingTours.length > 0 ? matchingTours : collection.tours
+                    tours: matchingTours
                 };
             }
             return null;
