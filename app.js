@@ -1,48 +1,5 @@
 // Main Application Logic for Audio Tours Index
 
-// Flatten the tours data structure for easier searching and display
-function flattenToursData() {
-    const allTours = [];
-    audioToursData.forEach(collection => {
-        collection.tours.forEach(tour => {
-            allTours.push({
-                ...tour,
-                collectionName: collection.collectionName
-            });
-        });
-    });
-    return allTours;
-}
-
-// Render a single tour card
-function renderTourCard(tour) {
-    const card = document.createElement('div');
-    card.className = 'tour-card';
-    card.setAttribute('data-tour-id', tour.id);
-    
-    let locationBadge = '';
-    if (tour.location) {
-        locationBadge = `<div class="location-badge">Location Available</div>`;
-    }
-    
-    card.innerHTML = `
-        <h3>${escapeHtml(tour.title)}</h3>
-        <div class="collection-name">${escapeHtml(tour.collectionName)}</div>
-        <p class="description">${escapeHtml(tour.description)}</p>
-        <div class="links">
-            <a href="${escapeHtml(tour.audioUrl)}" class="btn btn-audio" target="_blank" rel="noopener noreferrer">
-                Listen to Audio
-            </a>
-            <a href="${escapeHtml(tour.transcriptUrl)}" class="btn btn-transcript" target="_blank" rel="noopener noreferrer">
-                Read Transcript
-            </a>
-        </div>
-        ${locationBadge}
-    `;
-    
-    return card;
-}
-
 // Escape HTML to prevent XSS
 function escapeHtml(text) {
     const div = document.createElement('div');
@@ -50,70 +7,125 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Render all tours
-function renderTours(tours) {
+// Render all kiosks with their tours in linear format
+function renderKiosks(collections) {
     const container = document.getElementById('toursContainer');
     const noResults = document.getElementById('noResults');
-    
+
     container.innerHTML = '';
-    
-    if (tours.length === 0) {
+
+    if (collections.length === 0) {
         container.style.display = 'none';
         noResults.style.display = 'block';
         return;
     }
-    
-    container.style.display = 'grid';
+
+    container.style.display = 'block';
     noResults.style.display = 'none';
-    
-    tours.forEach(tour => {
-        const card = renderTourCard(tour);
-        container.appendChild(card);
+
+    collections.forEach(collection => {
+        // Create kiosk section
+        const kioskSection = document.createElement('section');
+        kioskSection.className = 'kiosk-section';
+
+        // Kiosk header with link
+        const header = document.createElement('div');
+        header.className = 'kiosk-header';
+
+        // Get the kiosk URL from the first tour
+        const kioskUrl = collection.tours.length > 0 ? collection.tours[0].audioUrl : '#';
+
+        header.innerHTML = `
+            <h2>${escapeHtml(collection.collectionName)}</h2>
+            <a href="${escapeHtml(kioskUrl)}" class="kiosk-link" target="_blank" rel="noopener noreferrer">
+                Official audio and transcripts ➜
+            </a>
+        `;
+        kioskSection.appendChild(header);
+
+        // Render each tour in the collection
+        collection.tours.forEach(tour => {
+            const tourDiv = document.createElement('div');
+            tourDiv.className = 'tour-item';
+            tourDiv.innerHTML = `
+                <h3>${escapeHtml(tour.title)}</h3>
+                <p>${escapeHtml(tour.description)}</p>
+            `;
+            kioskSection.appendChild(tourDiv);
+        });
+
+        container.appendChild(kioskSection);
     });
 }
 
-// Filter tours based on search query
-function filterTours(tours, query) {
-    if (!query) return tours;
-    
+// Filter collections based on search query
+function filterCollections(collections, query) {
+    if (!query) return collections;
+
     const lowerQuery = query.toLowerCase();
-    return tours.filter(tour => {
-        return tour.title.toLowerCase().includes(lowerQuery) ||
-               tour.description.toLowerCase().includes(lowerQuery) ||
-               tour.collectionName.toLowerCase().includes(lowerQuery);
-    });
+
+    // Filter collections that have matching tours
+    return collections
+        .map(collection => {
+            const matchingTours = collection.tours.filter(tour => {
+                return tour.title.toLowerCase().includes(lowerQuery) ||
+                       tour.description.toLowerCase().includes(lowerQuery) ||
+                       collection.collectionName.toLowerCase().includes(lowerQuery);
+            });
+
+            if (matchingTours.length > 0 ||
+                collection.collectionName.toLowerCase().includes(lowerQuery)) {
+                return {
+                    ...collection,
+                    tours: matchingTours.length > 0 ? matchingTours : collection.tours
+                };
+            }
+            return null;
+        })
+        .filter(c => c !== null);
 }
 
-// Sort tours
-function sortTours(tours, sortBy) {
-    const sorted = [...tours];
-    
+// Sort collections and their tours
+function sortCollections(collections, sortBy) {
+    let sorted = JSON.parse(JSON.stringify(collections)); // Deep copy
+
     switch(sortBy) {
         case 'name':
-            sorted.sort((a, b) => a.title.localeCompare(b.title));
+            // Sort tours within each collection alphabetically
+            sorted.forEach(collection => {
+                collection.tours.sort((a, b) => a.title.localeCompare(b.title));
+            });
             break;
         case 'nameDesc':
-            sorted.sort((a, b) => b.title.localeCompare(a.title));
+            // Sort tours within each collection reverse alphabetically
+            sorted.forEach(collection => {
+                collection.tours.sort((a, b) => b.title.localeCompare(a.title));
+            });
             break;
         default:
-            // Keep default order
+            // Keep default order (by kiosk number)
             break;
     }
-    
+
     return sorted;
+}
+
+// Count total tours in collections
+function countTours(collections) {
+    return collections.reduce((total, collection) => total + collection.tours.length, 0);
 }
 
 // Update the display based on current filters and sort
 function updateDisplay() {
     const searchQuery = document.getElementById('searchInput').value;
     const sortBy = document.getElementById('sortSelect').value;
-    
-    let tours = flattenToursData();
-    tours = filterTours(tours, searchQuery);
-    tours = sortTours(tours, sortBy);
-    
-    renderTours(tours);
-    updateStats(tours.length, flattenToursData().length);
+
+    let collections = JSON.parse(JSON.stringify(audioToursData)); // Deep copy
+    collections = filterCollections(collections, searchQuery);
+    collections = sortCollections(collections, sortBy);
+
+    renderKiosks(collections);
+    updateStats(countTours(collections), countTours(audioToursData));
 }
 
 // Update statistics display
@@ -140,16 +152,38 @@ function init() {
     // Set up event listeners
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
-    
+    const layoutToggle = document.getElementById('layoutToggle');
+    const compactToggle = document.getElementById('compactToggle');
+    const mainContainer = document.getElementById('mainContainer');
+    const toursContainer = document.getElementById('toursContainer');
+
     searchInput.addEventListener('input', debounce(updateDisplay, 300));
     sortSelect.addEventListener('change', updateDisplay);
-    
+
+    // Handle layout toggle (full width vs constrained)
+    layoutToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            mainContainer.classList.remove('constrained-width');
+        } else {
+            mainContainer.classList.add('constrained-width');
+        }
+    });
+
+    // Handle compact mode toggle (show only titles)
+    compactToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            toursContainer.classList.add('compact');
+        } else {
+            toursContainer.classList.remove('compact');
+        }
+    });
+
     // Initial render
     updateDisplay();
-    
+
     console.log('Audio Tours Index initialized');
     console.log(`Total collections: ${audioToursData.length}`);
-    console.log(`Total tours: ${flattenToursData().length}`);
+    console.log(`Total tours: ${countTours(audioToursData)}`);
 }
 
 // Debounce helper function
@@ -177,9 +211,9 @@ function debounce(func, wait) {
 // Export for potential future use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        flattenToursData,
-        filterTours,
-        sortTours
+        filterCollections,
+        sortCollections,
+        countTours
     };
 } else {
     // Run initialization when DOM is ready (browser only)

@@ -15,7 +15,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="mainContainer" class="container">
         <div class="search-section">
             <input type="text" id="searchInput" placeholder="Search tours by name, animal, or description..." aria-label="Search tours">
             <div class="filter-controls">
@@ -25,10 +25,18 @@
                     <option value="name">Name (A-Z)</option>
                     <option value="nameDesc">Name (Z-A)</option>
                 </select>
+                <label for="layoutToggle" style="margin-left: 20px;">
+                    <input type="checkbox" id="layoutToggle" checked>
+                    Full Width
+                </label>
+                <label for="compactToggle">
+                    <input type="checkbox" id="compactToggle">
+                    Compact (titles only)
+                </label>
             </div>
         </div>
 
-        <div id="toursContainer" class="tours-grid">
+        <div id="toursContainer" class="tours-linear">
             <!-- Tours will be dynamically loaded here -->
         </div>
 
