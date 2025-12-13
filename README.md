@@ -4,7 +4,7 @@ A consolidated web interface for browsing all audio tours and transcripts from t
 
 ## ⚠️ DISCLAIMER
 
-**This is an unauthorized site using copyrighted content from [https://www.wildanimalsanctuary.org/audio-tours](https://www.wildanimalsanctuary.org/audio-tours).** It is meant to demonstrate possibilities for improving the user experience. All code for this site is available in this repository at [https://github.com/nealmcb/Twas](https://github.com/nealmcb/Twas). I'll quickly take it down if requested.
+**This is an unauthorized site using copyrighted content from [https://www.wildanimalsanctuary.org/audio-tours](https://www.wildanimalsanctuary.org/audio-tours).** Content might be out-of-date. It is meant to demonstrate possibilities for improving the user experience. All code for this site is available in this repository at [https://github.com/nealmcb/Twas](https://github.com/nealmcb/Twas). I'll quickly take it down if requested.
 
 ## Live Site
 
