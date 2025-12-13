@@ -132,18 +132,33 @@ function filterCollections(collections, query) {
 
     const lowerQuery = query.toLowerCase();
 
+    // Check if query matches any animal keyword variants
+    const matchingAnimalKeywords = [];
+    for (const [mainKeyword, variants] of Object.entries(animalKeywordMappings)) {
+        if (variants.some(v => v.toLowerCase().includes(lowerQuery) || lowerQuery.includes(v.toLowerCase()))) {
+            matchingAnimalKeywords.push(mainKeyword);
+        }
+    }
+
     return collections
         .map(collection => {
             const matchingTours = collection.tours.filter(tour => {
-                // Search in title, description, and keywords
+                // Search in title, description, and collection name
                 const titleMatch = tour.title.toLowerCase().includes(lowerQuery);
                 const descMatch = tour.description.toLowerCase().includes(lowerQuery);
                 const collectionMatch = collection.collectionName.toLowerCase().includes(lowerQuery);
+
+                // Direct keyword match
                 const keywordMatch = tour.keywords && tour.keywords.some(k =>
                     k.toLowerCase().includes(lowerQuery) || lowerQuery.includes(k.toLowerCase())
                 );
 
-                return titleMatch || descMatch || collectionMatch || keywordMatch;
+                // Animal variant match (e.g., searching "puma" should find tours with "mountain lion" keyword)
+                const animalVariantMatch = tour.keywords && matchingAnimalKeywords.some(mainKeyword =>
+                    tour.keywords.includes(mainKeyword)
+                );
+
+                return titleMatch || descMatch || collectionMatch || keywordMatch || animalVariantMatch;
             });
 
             if (matchingTours.length > 0) {
@@ -204,12 +219,36 @@ function countTours(collections) {
     return collections.reduce((total, collection) => total + collection.tours.length, 0);
 }
 
+// Comprehensive animal keyword mappings with plurals and common names
+const animalKeywordMappings = {
+    'tiger': ['tiger', 'tigers', 'bengal tiger', 'bengal tigers', 'siberian tiger', 'siberian tigers', 'amur tiger', 'amur tigers', 'strawberry tiger', 'strawberry tigers', 'golden tabby', 'golden tabbies', 'white tiger', 'white tigers'],
+    'lion': ['lion', 'lions', 'african lion', 'african lions', 'asiatic lion', 'asiatic lions'],
+    'leopard': ['leopard', 'leopards', 'african leopard', 'african leopards', 'persian leopard', 'persian leopards'],
+    'jaguar': ['jaguar', 'jaguars', 'melanistic jaguar', 'melanistic jaguars', 'black jaguar', 'black jaguars'],
+    'mountain lion': ['mountain lion', 'mountain lions', 'cougar', 'cougars', 'puma', 'pumas', 'catamount', 'catamounts', 'panther', 'panthers'],
+    'serval': ['serval', 'servals'],
+    'caracal': ['caracal', 'caracals'],
+    'bobcat': ['bobcat', 'bobcats'],
+    'lynx': ['lynx', 'lynxes', 'canadian lynx'],
+    'bear': ['bear', 'bears', 'grizzly', 'grizzlies', 'grizzly bear', 'grizzly bears', 'black bear', 'black bears', 'brown bear', 'brown bears', 'syrian brown bear', 'syrian brown bears', 'asiatic black bear', 'asiatic black bears'],
+    'wolf': ['wolf', 'wolves', 'gray wolf', 'gray wolves', 'grey wolf', 'grey wolves', 'timber wolf', 'timber wolves', 'arctic wolf', 'arctic wolves', 'mexican wolf', 'mexican wolves'],
+    'fox': ['fox', 'foxes', 'red fox', 'red foxes', 'arctic fox', 'arctic foxes', 'silver fox', 'silver foxes'],
+    'coyote': ['coyote', 'coyotes'],
+    'dingo': ['dingo', 'dingoes', 'dingos'],
+    'chimpanzee': ['chimpanzee', 'chimpanzees', 'chimp', 'chimps'],
+    'hybrid': ['hybrid', 'hybrids', 'liger', 'ligers', 'tigon', 'tigons', 'coywolf', 'coywolves', 'wolf hybrid', 'wolf hybrids', 'wolf-dog', 'wolf-dogs', 'wolfdog', 'wolfdogs'],
+    'farm animal': ['cow', 'cows', 'bull', 'bulls', 'cattle', 'donkey', 'donkeys', 'burro', 'burros', 'water buffalo', 'water buffaloes', 'bison', 'buffalo', 'buffaloes', 'horse', 'horses', 'pony', 'ponies', 'alpaca', 'alpacas', 'llama', 'llamas'],
+    'eagle': ['eagle', 'eagles', 'bald eagle', 'bald eagles', 'golden eagle', 'golden eagles'],
+    'emu': ['emu', 'emus'],
+    'peacock': ['peacock', 'peacocks', 'peafowl'],
+    'camel': ['camel', 'camels', 'bactrian camel', 'bactrian camels', 'dromedary', 'dromedaries'],
+    'coati': ['coati', 'coatis', 'coatimundi', 'coatimundis'],
+};
+
 // Get all unique animal keywords from all tours
 function getAllAnimalKeywords() {
     const animalSet = new Set();
-    const animalKeywords = ['tiger', 'lion', 'bear', 'leopard', 'jaguar', 'mountain lion',
-                            'wolf', 'fox', 'coyote', 'bobcat', 'serval', 'caracal',
-                            'chimpanzee', 'hybrid'];
+    const animalKeywords = Object.keys(animalKeywordMappings);
 
     audioToursData.forEach(collection => {
         collection.tours.forEach(tour => {
@@ -258,7 +297,11 @@ function showAnimalIndex() {
 
     animals.forEach(animal => {
         const animalBtn = document.createElement('button');
-        animalBtn.textContent = animal.charAt(0).toUpperCase() + animal.slice(1);
+        // Capitalize each word properly (e.g., "mountain lion" -> "Mountain Lion")
+        const displayName = animal.split(' ').map(word =>
+            word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+        animalBtn.textContent = displayName;
         animalBtn.style.padding = '0.6rem 1.2rem';
         animalBtn.style.background = '#4a7c59';
         animalBtn.style.color = 'white';
