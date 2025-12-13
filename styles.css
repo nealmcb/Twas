@@ -162,7 +162,7 @@ main {
 .stats-inline {
     color: #4a7c59;
     font-weight: 600;
-    margin-left: auto;
+    margin-right: 1.5rem;
 }
 
 /* Linear Tours Layout */
@@ -171,11 +171,16 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Grid Layout Option - only in non-compact mode */
-.tours-linear.grid-layout:not(.compact) {
-    display: grid;
+/* Grid Layout Option */
+.tours-linear.grid-layout {
+    display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1.5rem;
+}
+
+/* Compact mode overrides grid - back to block */
+.tours-linear.compact {
+    display: block !important;
 }
 
 /* Kiosk Section */
@@ -367,13 +372,17 @@ footer p {
         justify-content: center;
     }
 
-    .tours-linear.grid-layout:not(.compact) {
-        grid-template-columns: 1fr;
+    .tours-linear.grid-layout {
+        grid-template-columns: 1fr !important;
     }
 
     .tours-linear.compact .kiosk-section {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .stats-inline {
+        margin-bottom: 0.5rem;
     }
 }
 
