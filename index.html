@@ -23,18 +23,21 @@
     <main id="mainContainer" class="container">
         <div class="search-section">
             <div class="search-row">
-                <input type="text" id="searchInput" placeholder="Search tours..." aria-label="Search tours">
                 <select id="sortSelect" aria-label="Sort order">
                     <option value="default">Default Order</option>
                     <option value="name">A-Z</option>
                     <option value="nameDesc">Z-A</option>
                 </select>
+                <button id="clearButton" class="clear-btn" aria-label="Clear search">Clear</button>
+                <input type="text" id="searchInput" placeholder="Search tours..." aria-label="Search tours">
             </div>
-            <div class="filter-controls">
+            <div class="second-row">
                 <span class="stats-inline" id="statsInline"></span>
-                <label><input type="checkbox" id="fullWidthToggle" checked> Full Width</label>
-                <label><input type="checkbox" id="gridToggle"> Grid Layout</label>
-                <label><input type="checkbox" id="compactToggle"> Compact</label>
+                <div class="filter-controls">
+                    <label><input type="checkbox" id="fullWidthToggle" checked> Full Width</label>
+                    <label><input type="checkbox" id="gridToggle"> Grid Layout</label>
+                    <label><input type="checkbox" id="compactToggle"> Compact</label>
+                </div>
             </div>
         </div>
 

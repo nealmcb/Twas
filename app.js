@@ -207,6 +207,7 @@ function toggleHeader() {
 function init() {
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
+    const clearButton = document.getElementById('clearButton');
     const fullWidthToggle = document.getElementById('fullWidthToggle');
     const gridToggle = document.getElementById('gridToggle');
     const compactToggle = document.getElementById('compactToggle');
@@ -217,6 +218,12 @@ function init() {
     // Search and sort
     searchInput.addEventListener('input', debounce(updateDisplay, 300));
     sortSelect.addEventListener('change', updateDisplay);
+
+    // Clear button
+    clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        updateDisplay();
+    });
 
     // Full width toggle
     fullWidthToggle.addEventListener('change', (e) => {
@@ -229,20 +236,27 @@ function init() {
 
     // Grid layout toggle
     gridToggle.addEventListener('change', (e) => {
+        console.log('Grid toggle changed:', e.target.checked);
         if (e.target.checked) {
             toursContainer.classList.add('grid-layout');
+            console.log('Added grid-layout class. Classes:', toursContainer.className);
+            console.log('Computed display:', window.getComputedStyle(toursContainer).display);
         } else {
             toursContainer.classList.remove('grid-layout');
+            console.log('Removed grid-layout class. Classes:', toursContainer.className);
         }
     });
 
     // Compact mode toggle
     compactToggle.addEventListener('change', () => {
+        console.log('Compact toggle changed:', compactToggle.checked);
         if (compactToggle.checked) {
             toursContainer.classList.add('compact');
         } else {
             toursContainer.classList.remove('compact');
         }
+        console.log('Container classes:', toursContainer.className);
+        console.log('Computed display:', window.getComputedStyle(toursContainer).display);
         updateDisplay();
     });
 
@@ -255,6 +269,8 @@ function init() {
     console.log('Audio Tours Index initialized');
     console.log(`Total collections: ${audioToursData.length}`);
     console.log(`Total tours: ${countTours(audioToursData)}`);
+    console.log('Tours container element:', toursContainer);
+    console.log('Initial classes:', toursContainer.className);
 }
 
 // Debounce helper function
