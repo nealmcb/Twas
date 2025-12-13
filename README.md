@@ -2,6 +2,10 @@
 
 A consolidated web interface for browsing all audio tours and transcripts from the Wild Animal Sanctuary.
 
+## Live Site
+
+The site is automatically deployed to GitHub Pages at: https://nealmcb.github.io/Twas/
+
 ## Overview
 
 This project provides a single, unified web page that indexes audio tours from the Wild Animal Sanctuary (https://www.wildanimalsanctuary.org/audio-tours). The website has approximately 19 collections; this implementation currently includes 17 sample collections as a demonstration. Instead of navigating through multiple collection pages, visitors can:
@@ -88,6 +92,21 @@ The tour data should be extracted from: https://www.wildanimalsanctuary.org/audi
 
 Each collection page contains links to individual audio files and transcripts that should be added to the `tours-data.js` file.
 
+## Deployment
+
+The site is automatically deployed to GitHub Pages using GitHub Actions:
+
+- **Automatic Deployment**: Any changes pushed to the `main` branch will automatically trigger a deployment
+- **Manual Deployment**: The workflow can also be triggered manually from the Actions tab in GitHub
+- **Live URL**: https://nealmcb.github.io/Twas/
+
+### Deployment Process
+
+1. Push changes to the `main` branch
+2. GitHub Actions workflow (`.github/workflows/deploy.yml`) runs automatically
+3. The workflow uploads all files to GitHub Pages
+4. The site becomes available at the GitHub Pages URL within a few minutes
+
 ## Contributing
 
 To contribute to this project:
@@ -95,6 +114,7 @@ To contribute to this project:
 2. Test changes by opening `index.html` in a browser
 3. Ensure all links work correctly
 4. Submit changes via pull request
+5. Once merged to `main`, changes will be automatically deployed
 
 ## Future Development: Geolocation
 
