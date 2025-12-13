@@ -77,7 +77,7 @@ header.collapsed h1 {
 .header-details {
     margin-top: 0.5rem;
     transition: max-height 0.3s, opacity 0.3s;
-    max-height: 100px;
+    max-height: 300px;
     opacity: 1;
     overflow: hidden;
 }
@@ -92,6 +92,30 @@ header.collapsed h1 {
     font-size: 1rem;
     opacity: 0.9;
     margin: 0;
+}
+
+.disclaimer {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.disclaimer p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.disclaimer a {
+    color: #ffeb3b;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.disclaimer a:hover {
+    color: #fff;
 }
 
 /* Main Content */
@@ -409,6 +433,17 @@ footer p {
     font-size: 0.85rem;
     opacity: 0.8;
     font-style: italic;
+}
+
+.disclaimer-link {
+    color: #ffeb3b;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.disclaimer-link:hover {
+    color: #fff;
 }
 
 /* Responsive Design */

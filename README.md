@@ -2,6 +2,10 @@
 
 A consolidated web interface for browsing all audio tours and transcripts from the Wild Animal Sanctuary.
 
+## ⚠️ DISCLAIMER
+
+**This is an unauthorized site using copyrighted content from [https://www.wildanimalsanctuary.org/audio-tours](https://www.wildanimalsanctuary.org/audio-tours).** It is meant to demonstrate possibilities for improving the user experience. All code for this site is available in this repository at [https://github.com/nealmcb/Twas](https://github.com/nealmcb/Twas). I'll quickly take it down if requested.
+
 ## Live Site
 
 The site is automatically deployed to GitHub Pages at: https://nealmcb.github.io/Twas/

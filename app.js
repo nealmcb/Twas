@@ -453,6 +453,27 @@ function init() {
     // Header toggle
     headerToggle.addEventListener('click', toggleHeader);
 
+    // Disclaimer link - expand header and scroll to top
+    const disclaimerLink = document.getElementById('disclaimerLink');
+    if (disclaimerLink) {
+        disclaimerLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const header = document.getElementById('pageHeader');
+            const headerDetails = document.getElementById('headerDetails');
+            const headerToggle = document.getElementById('headerToggle');
+
+            // Expand header if collapsed
+            if (header.classList.contains('collapsed')) {
+                header.classList.remove('collapsed');
+                headerDetails.classList.remove('hidden');
+                headerToggle.textContent = '▼';
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Initial render
     updateDisplay();
 
