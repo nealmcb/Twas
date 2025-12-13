@@ -141,6 +141,22 @@ main {
     background: #d0d0d0;
 }
 
+.index-btn {
+    padding: 0.5rem 0.75rem;
+    background: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.index-btn:hover {
+    background: #3a6249;
+}
+
 #searchInput {
     flex: 1;
     min-width: 200px;
@@ -274,6 +290,32 @@ main {
     color: #555;
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+.tour-keywords {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    display: none;
+}
+
+.tour-keywords.visible {
+    display: block;
+}
+
+.tour-keywords .keyword {
+    display: inline-block;
+    background: #e8f4e8;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    margin-bottom: 0.4rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.tour-keywords .keyword:hover {
+    background: #d0e8d0;
 }
 
 /* Ultra-Compact Mode - ONE line per kiosk */

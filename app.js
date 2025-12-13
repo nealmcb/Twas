@@ -1,5 +1,7 @@
 // Main Application Logic for Audio Tours Index
 
+let showKeywords = false;
+
 // Escape HTML to prevent XSS
 function escapeHtml(text) {
     const div = document.createElement('div');
@@ -58,17 +60,40 @@ function renderKiosks(collections, isCompact) {
 
             kioskSection.appendChild(toursContainer);
         } else {
-            // Normal mode: render each tour with description
+            // Normal mode: render each tour with description and keywords
             collection.tours.forEach(tour => {
                 const tourDiv = document.createElement('div');
                 tourDiv.className = 'tour-item';
+
                 const title = document.createElement('h3');
                 title.textContent = tour.title;
                 title.onclick = () => handleTitleClick(tour.title);
+                tourDiv.appendChild(title);
+
                 const desc = document.createElement('p');
                 desc.textContent = tour.description;
-                tourDiv.appendChild(title);
                 tourDiv.appendChild(desc);
+
+                // Add keywords if available
+                if (tour.keywords && tour.keywords.length > 0) {
+                    const keywordsDiv = document.createElement('div');
+                    keywordsDiv.className = 'tour-keywords' + (showKeywords ? ' visible' : '');
+
+                    const label = document.createElement('strong');
+                    label.textContent = 'Keywords: ';
+                    keywordsDiv.appendChild(label);
+
+                    tour.keywords.forEach(keyword => {
+                        const keywordSpan = document.createElement('span');
+                        keywordSpan.className = 'keyword';
+                        keywordSpan.textContent = keyword;
+                        keywordSpan.onclick = () => handleKeywordClick(keyword);
+                        keywordsDiv.appendChild(keywordSpan);
+                    });
+
+                    tourDiv.appendChild(keywordsDiv);
+                }
+
                 kioskSection.appendChild(tourDiv);
             });
         }
@@ -90,11 +115,18 @@ function handleTitleClick(title) {
 
     searchInput.value = title;
     updateDisplay();
-    // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Filter collections based on search query
+// Handle clicking on a keyword to search by it
+function handleKeywordClick(keyword) {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = keyword;
+    updateDisplay();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Filter collections based on search query (including keywords)
 function filterCollections(collections, query) {
     if (!query) return collections;
 
@@ -103,9 +135,15 @@ function filterCollections(collections, query) {
     return collections
         .map(collection => {
             const matchingTours = collection.tours.filter(tour => {
-                return tour.title.toLowerCase().includes(lowerQuery) ||
-                       tour.description.toLowerCase().includes(lowerQuery) ||
-                       collection.collectionName.toLowerCase().includes(lowerQuery);
+                // Search in title, description, and keywords
+                const titleMatch = tour.title.toLowerCase().includes(lowerQuery);
+                const descMatch = tour.description.toLowerCase().includes(lowerQuery);
+                const collectionMatch = collection.collectionName.toLowerCase().includes(lowerQuery);
+                const keywordMatch = tour.keywords && tour.keywords.some(k =>
+                    k.toLowerCase().includes(lowerQuery) || lowerQuery.includes(k.toLowerCase())
+                );
+
+                return titleMatch || descMatch || collectionMatch || keywordMatch;
             });
 
             if (matchingTours.length > 0) {
@@ -123,19 +161,39 @@ function filterCollections(collections, query) {
 function sortCollections(collections, sortBy) {
     let sorted = JSON.parse(JSON.stringify(collections));
 
-    switch(sortBy) {
-        case 'name':
-            sorted.forEach(collection => {
-                collection.tours.sort((a, b) => a.title.localeCompare(b.title));
+    if (sortBy === 'name' || sortBy === 'nameDesc') {
+        // Flatten all tours, sort them, then regroup by collection
+        let allTours = [];
+        sorted.forEach(collection => {
+            collection.tours.forEach(tour => {
+                allTours.push({
+                    ...tour,
+                    collectionName: collection.collectionName,
+                    collectionUrl: collection.tours[0].audioUrl
+                });
             });
-            break;
-        case 'nameDesc':
-            sorted.forEach(collection => {
-                collection.tours.sort((a, b) => b.title.localeCompare(a.title));
-            });
-            break;
-        default:
-            break;
+        });
+
+        // Sort all tours
+        if (sortBy === 'name') {
+            allTours.sort((a, b) => a.title.localeCompare(b.title));
+        } else {
+            allTours.sort((a, b) => b.title.localeCompare(a.title));
+        }
+
+        // Regroup by collection while maintaining sort order
+        const collectionMap = {};
+        allTours.forEach(tour => {
+            if (!collectionMap[tour.collectionName]) {
+                collectionMap[tour.collectionName] = {
+                    collectionName: tour.collectionName,
+                    tours: []
+                };
+            }
+            collectionMap[tour.collectionName].tours.push(tour);
+        });
+
+        sorted = Object.values(collectionMap);
     }
 
     return sorted;
@@ -144,6 +202,83 @@ function sortCollections(collections, sortBy) {
 // Count total tours in collections
 function countTours(collections) {
     return collections.reduce((total, collection) => total + collection.tours.length, 0);
+}
+
+// Get all unique animal keywords from all tours
+function getAllAnimalKeywords() {
+    const animalSet = new Set();
+    const animalKeywords = ['tiger', 'lion', 'bear', 'leopard', 'jaguar', 'mountain lion',
+                            'wolf', 'fox', 'coyote', 'bobcat', 'serval', 'caracal',
+                            'chimpanzee', 'hybrid'];
+
+    audioToursData.forEach(collection => {
+        collection.tours.forEach(tour => {
+            if (tour.keywords) {
+                tour.keywords.forEach(keyword => {
+                    if (animalKeywords.includes(keyword)) {
+                        animalSet.add(keyword);
+                    }
+                });
+            }
+        });
+    });
+
+    return Array.from(animalSet).sort();
+}
+
+// Show animal index
+function showAnimalIndex() {
+    const animals = getAllAnimalKeywords();
+    const searchInput = document.getElementById('searchInput');
+    const container = document.getElementById('toursContainer');
+
+    container.innerHTML = '';
+
+    const indexSection = document.createElement('div');
+    indexSection.style.background = 'white';
+    indexSection.style.padding = '2rem';
+    indexSection.style.borderRadius = '8px';
+    indexSection.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+
+    const title = document.createElement('h2');
+    title.textContent = 'Animal Index';
+    title.style.marginBottom = '1rem';
+    title.style.color = '#2c5530';
+    indexSection.appendChild(title);
+
+    const description = document.createElement('p');
+    description.textContent = 'Click any animal name to see all tours featuring that animal:';
+    description.style.marginBottom = '1rem';
+    indexSection.appendChild(description);
+
+    const animalList = document.createElement('div');
+    animalList.style.display = 'flex';
+    animalList.style.flexWrap = 'wrap';
+    animalList.style.gap = '0.75rem';
+
+    animals.forEach(animal => {
+        const animalBtn = document.createElement('button');
+        animalBtn.textContent = animal.charAt(0).toUpperCase() + animal.slice(1);
+        animalBtn.style.padding = '0.6rem 1.2rem';
+        animalBtn.style.background = '#4a7c59';
+        animalBtn.style.color = 'white';
+        animalBtn.style.border = 'none';
+        animalBtn.style.borderRadius = '4px';
+        animalBtn.style.cursor = 'pointer';
+        animalBtn.style.fontSize = '1rem';
+        animalBtn.style.fontWeight = '600';
+        animalBtn.onclick = () => {
+            searchInput.value = animal;
+            updateDisplay();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        animalList.appendChild(animalBtn);
+    });
+
+    indexSection.appendChild(animalList);
+    container.appendChild(indexSection);
+
+    updateStats(animals.length, countTours(audioToursData));
 }
 
 // Update the display based on current filters and sort
@@ -208,6 +343,8 @@ function init() {
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
     const clearButton = document.getElementById('clearButton');
+    const animalIndexBtn = document.getElementById('animalIndexBtn');
+    const showKeywordsBtn = document.getElementById('showKeywordsBtn');
     const fullWidthToggle = document.getElementById('fullWidthToggle');
     const gridToggle = document.getElementById('gridToggle');
     const compactToggle = document.getElementById('compactToggle');
@@ -222,6 +359,16 @@ function init() {
     // Clear button
     clearButton.addEventListener('click', () => {
         searchInput.value = '';
+        updateDisplay();
+    });
+
+    // Animal Index button
+    animalIndexBtn.addEventListener('click', showAnimalIndex);
+
+    // Show Keywords button
+    showKeywordsBtn.addEventListener('click', () => {
+        showKeywords = !showKeywords;
+        showKeywordsBtn.textContent = showKeywords ? 'Hide Keywords' : 'Show Keywords';
         updateDisplay();
     });
 
